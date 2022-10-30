@@ -16,7 +16,7 @@ class BaseModel:
         if kwargs is not None and kwargs != {}:
             for k in kwargs.keys():
                 self.__dict__[k] = kwargs[k]
-                if == 'created_at' or k='updated_at':
+                if k == 'created_at' or k == 'updated_at':
                     d_format = '%Y-%m-%dT%H:%M:%S.%f'
                     self.__dict__[k] = datetime.strptime(kwargs[k], d_format)
             return
