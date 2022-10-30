@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""Module's Base Model"""
-
+"""Module Base Model"""
 
 from uuid import uuid4
 from datetime import datetime
 import models
 from cmd import Cmd
 
+
 class BaseModel:
-    """Base model class"""
-    
+    """Class BaseModel"""
+
     def __init__(self, *args, **kwargs):
         """Constructor init"""
 
@@ -21,7 +21,7 @@ class BaseModel:
                     self.__dict__[k] = datetime.strptime(kwargs[k], d_format)
             return
 
-        self.id=str(uuid4())
+        self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = self.created_at
         models.storage.new(self)
@@ -32,15 +32,16 @@ class BaseModel:
                                      self.id, self.__dict__)
 
     def save(self):
-        """Updates the updated_at attribute with the time now"""
+        """Updates updated_at with the current datetime."""
         self.updated_at = datetime.now()
         models.storage.new(self)
         models.storage.save()
 
     def to_dict(self):
-        """Creates a dictionary with all key/value pairs of __dict__"""
-        my_dict = self.__dict__.copy()
-        my_dict["__class__"]= self.__class__.__name__
-        my_dict["created_at"]= my_dict["created_at"].isoformat()
-        my_dict["updated_at"]= my_dict["updated_at"].isoformat()
-        return my_dict
+        """Returns a dictionary with all keys/values of __dict__."""
+
+        new_dict = self.__dict__.copy()
+        new_dict["__class__"] = self.__class__.__name__
+        new_dict["created_at"] = new_dict["created_at"].isoformat()
+        new_dict["updated_at"] = new_dict["updated_at"].isoformat()
+        return new_dict
