@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Handles storage and retrieval of data"""
+"""Module File Storage"""
 
 import json
 from os.path import isfile
@@ -9,15 +9,17 @@ from ..place import Place
 from ..state import State
 from ..city import City
 from ..amenity import Amenity
-from ..review import 
+from ..review import Review
+
 
 class FileStorage:
-    """Class for File Storage"""
-    __file_path = file.json
+    """"Class File Storage"""
+
+    __file_path = "file.json"
     __objects = {}
-     
-     def __init__(self, file_path=None):
-             """"Constructor method"""
+
+    def __init__(self, file__path=None):
+        """"Constructor method"""
 
         if file__path is not None:
             FileStorage.__file_path = file__path
