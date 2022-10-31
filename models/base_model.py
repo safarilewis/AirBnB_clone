@@ -40,8 +40,24 @@ class BaseModel:
     def to_dict(self):
         """Returns a dictionary with all keys/values of __dict__."""
 
-        new_dict = self.__dict__.copy()
-        new_dict["__class__"] = self.__class__.__name__
-        new_dict["created_at"] = new_dict["created_at"].isoformat()
-        new_dict["updated_at"] = new_dict["updated_at"].isoformat()
-        return new_dict
+        my_dict = self.__dict__.copy()
+        my_dict["__class__"] = self.__class__.__name__
+        my_dict["created_at"] = my_dict["created_at"].isoformat()
+        my_dict["updated_at"] = my_dict["updated_at"].isoformat()
+        return my_dict
+
+    @classmethod
+    def all(cls):
+        """All instances of a class."""
+        return "all " + cls.__name__
+
+    @classmethod
+    def count(cls):
+        """Count instances of a class."""
+        instances = models.storage.all()
+        counter = 0
+        for key, val in instances.items():
+            if(val.__class__.__name__ == cls.__name__):
+                counter += 1
+        print(counter)
+        return "\n"

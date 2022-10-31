@@ -86,9 +86,9 @@ class Test_BaseModel(unittest.TestCase):
     def test_to_dict(self):
         """Tests the to_dict function."""
         obj = BaseModel()
-        new_dict = obj.__dict__.copy()
-        new_dict["__class__"] = obj.__class__.__name__
-        new_dict["created_at"] = new_dict["created_at"].isoformat()
-        new_dict["updated_at"] = new_dict["updated_at"].isoformat()
+        my_dict = obj.__dict__.copy()
+        my_dict["__class__"] = obj.__class__.__name__
+        my_dict["created_at"] = my_dict["created_at"].isoformat()
+        my_dict["updated_at"] = my_dict["updated_at"].isoformat()
         comparing = obj.to_dict()
-        self.assertDictEqual(new_dict, comparing)
+        self.assertDictEqual(my_dict, comparing)
