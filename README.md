@@ -2,7 +2,7 @@
 
 #### Holberton School Airbnb Clone - Command Interpreter Project Description
 
-![Holberton hbnb](holbi.jpg)
+![Holberton hbnb](holbi.png)
 
 This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
 
@@ -135,6 +135,6 @@ e9672773-b189-4938-93fa-3ee99abd60ca
 
 ### Authors
 
-\*Lewis Safari | [GitHub](https://github.com/safarilewis) |
+- *Lewis Safari | [GitHub](https://github.com/safarilewis) |
 
 - Emmanuel Arisa | [GitHub](https://github.com/arisa-n) |
