@@ -123,7 +123,6 @@ e9672773-b189-4938-93fa-3ee99abd60ca
 
 ```
 
-
 ### Environment
 
 - Language: Python3
@@ -132,6 +131,6 @@ e9672773-b189-4938-93fa-3ee99abd60ca
 
 ### Authors
 
-- *Lewis Safari | [GitHub](https://github.com/safarilewis) |
+- Lewis Safari | [GitHub](https://github.com/safarilewis) |
 
 - Emmanuel Arisa | [GitHub](https://github.com/arisa-n) |
